@@ -1,0 +1,8 @@
+# DIR
+node_modules/
+dist/
+lib/
+coverage/
+
+# FILE
+*.log

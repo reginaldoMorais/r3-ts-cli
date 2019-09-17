@@ -1,0 +1,37 @@
+export default (name: string) => {
+  const nameUpperCase = name.charAt(0).toUpperCase() + name.slice(1);
+  return `import React from 'react';
+
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import reducers from '../../../../../Reducers';
+import ${nameUpperCase}Container from '../${nameUpperCase}Container';
+import ${nameUpperCase}Component from '../${nameUpperCase}';
+
+Enzyme.configure({ adapter: new Adapter() });
+
+describe('<${nameUpperCase}Container />', () => {
+  let mountStore;
+
+  beforeEach(() => {
+    mountStore = component => {
+      const store = createStore(reducers, {});
+      return mount(<Provider store={store}>{component}</Provider>);
+    };
+  });
+
+  it('Component must be conected with store.', () => {
+    const wrapper = mountStore(<${nameUpperCase}Container />);
+    const container = wrapper.find(${nameUpperCase}Container);
+    const component = container.find(${nameUpperCase}Component);
+
+    expect(component.text()).toBe('${nameUpperCase} page');
+    expect(component.find('h1').text()).toEqual('${nameUpperCase} page');
+  });
+});
+`;
+};

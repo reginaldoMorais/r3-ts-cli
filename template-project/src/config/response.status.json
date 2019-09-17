@@ -1,0 +1,68 @@
+{
+  "status": {
+    "ok": {
+      "status": "200",
+      "message": "Ok"
+    },
+    "created": {
+      "status": "201",
+      "message": "Created"
+    },
+    "noContent": {
+      "status": "204",
+      "message": "No Content"
+    },
+    "movedPermanently": {
+      "status": "301",
+      "message": "Moved Permanently"
+    },
+    "temporaryRedirect": {
+      "status": "307",
+      "message": "Temporary Redirect"
+    },
+    "permanentRedirect": {
+      "status": "308",
+      "message": "Permanent Redirect"
+    },
+    "badRequest": {
+      "status": "400",
+      "message": "Bad Request"
+    },
+    "unauthorized": {
+      "status": "401",
+      "message": "Unauthorized"
+    },
+    "forbidden": {
+      "status": "403",
+      "message": "Forbidden"
+    },
+    "notFound": {
+      "status": "404",
+      "message": "Not Found"
+    },
+    "methodNotAllowed": {
+      "status": "405",
+      "message": "Method Not Allowed"
+    },
+    "requestTimeout": {
+      "status": "408",
+      "message": "Request Timeout"
+    },
+    "conflict": {
+      "status": "409",
+      "message": "Conflict"
+    },
+    "internalServerError": {
+      "status": "500",
+      "message": "Internal Server Error"
+    },
+    "serviceUnavailable": {
+      "status": "503",
+      "message": "Service Unavailable"
+    },
+    "gatewayTimeout": {
+      "status": "504",
+      "message": "Gateway Timeout"
+    }
+  }
+}

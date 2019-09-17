@@ -1,0 +1,66 @@
+{
+  "name": "r3-ts-cli",
+  "version": "0.0.1",
+  "main": "./lib/index.js",
+  "bin": {
+    "r3-ts-cli": "./lib/index.js"
+  },
+  "repository": "https://github.com/reginaldoMorais/r3-ts-cli.git",
+  "author": "reginaldoMorais <reginaldo.cmorais@gmail.com>",
+  "description": "Create React applications with server-side rendering using Redux and Router v4. Simple and very fast!",
+  "scripts": {
+    "clean": "rm -Rf dist",
+    "start": "ts-node src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "npm run clean && tsc -p .",
+    "test": "jest",
+    "test:w": "jest --watchAll",
+    "test:v": "jest --verbose",
+    "test:c": "jest --coverage",
+    "test:d": "jest --debug",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "redux",
+    "react-router",
+    "typescript",
+    "code-generator"
+  ],
+  "dependencies": {
+    "@types/unzipper": "^0.10.0",
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "commander": "^3.0.1",
+    "figlet": "^1.2.4",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0",
+    "path": "^0.12.7",
+    "tslint": "^5.20.0",
+    "unzip": "^0.1.11",
+    "unzipper": "^0.10.5"
+  },
+  "devDependencies": {
+    "@types/clear": "^0.1.0",
+    "@types/clui": "^0.3.0",
+    "@types/figlet": "^1.2.0",
+    "@types/fs-extra": "^8.0.0",
+    "@types/inquirer": "^6.5.0",
+    "@types/lodash": "^4.14.138",
+    "@types/minimist": "^1.2.0",
+    "@types/node": "^12.7.5",
+    "@types/touch": "^3.1.1",
+    "@types/unzip": "^0.1.1",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.3"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "src/project"
+    ]
+  }
+}

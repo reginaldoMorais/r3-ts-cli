@@ -1,0 +1,30 @@
+export default (component: string) => {
+  return `import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+/* Libs */
+import { Row, Col, Container } from 'reactstrap';
+
+/* Containers / Components */
+
+class ${component} extends Component {
+  render() {
+    return (
+      <Container>
+        <Row>
+          <Col xs={12}>
+            <h1>${component} page</h1>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
+
+${component}.defaultProps = {};
+
+${component}.propTypes = {};
+
+export default ${component};
+`;
+};

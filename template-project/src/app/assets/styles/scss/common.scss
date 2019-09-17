@@ -1,0 +1,36 @@
+/**
+ * Common
+ */
+
+html {
+  height: 100%;
+  font-size: 14px;
+
+  body {
+    height: 100% !important;
+    font-family: 'Roboto-Regular';
+    font-size: 14px;
+    margin: 0;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    a {
+      color: #d39ef3;
+    }
+
+    small {
+      font-size: .8rem;
+    }
+  }
+}

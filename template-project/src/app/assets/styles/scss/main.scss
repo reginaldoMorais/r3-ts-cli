@@ -1,0 +1,15 @@
+/**
+ * Styles
+ */
+
+@import './fonts';
+@import './common';
+
+/* Components */
+@import './components/loading';
+// @import './components/react-burger-menu';
+// @import './components/react-table';
+@import './components/toastr';
+
+/* Pages */
+@import './pages/home';
