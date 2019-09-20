@@ -1,5 +1,5 @@
 export default (name: string) => {
-  const nameUpperCase = name.charAt(0).toUpperCase() + name.slice(1);
+  const component = name.charAt(0).toUpperCase() + name.slice(1);
   return `import React from 'react';
 
 import Enzyme, { mount } from 'enzyme';
@@ -8,30 +8,49 @@ import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import reducers from '../../../../../Reducers';
-import ${nameUpperCase}Container from '../${nameUpperCase}Container';
-import ${nameUpperCase}Component from '../${nameUpperCase}';
+import Lang, { Locates } from '../../../../lang';
+
+import { IntlProvider } from 'react-intl';
+import ${component} from '../${component}';
+import ${component}Container from '../${component}Container';
+
+import rootReducer from '../../../../redux/ducks/rootReducer';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('<${nameUpperCase}Container />', () => {
-  let mountStore;
+describe(\`${component}Container rendering\`, () => {
+  let mountWithStore: any;
 
   beforeEach(() => {
-    mountStore = component => {
-      const store = createStore(reducers, {});
-      return mount(<Provider store={store}>{component}</Provider>);
+    mountWithStore = (component: any, initialState: any = {}) => {
+      const store = createStore(rootReducer, initialState);
+      const currentLang = Lang[Locates.EN];
+      return mount(
+        <Provider store={store}>
+          <IntlProvider locale={currentLang.locale} messages={currentLang.messages}>
+            {component}
+          </IntlProvider>
+        </Provider>);
     };
   });
 
-  it('Component must be conected with store.', () => {
-    const wrapper = mountStore(<${nameUpperCase}Container />);
-    const container = wrapper.find(${nameUpperCase}Container);
-    const component = container.find(${nameUpperCase}Component);
+  it(\`Should render ${component} with h1\`, () => {
+    const initialState = {
+      locate: {
+        data: {
+          id: 'en',
+          label: 'en',
+        },
+        loading: false,
+        error: false,
+      },
+    };
 
-    expect(component.text()).toBe('${nameUpperCase} page');
-    expect(component.find('h1').text()).toEqual('${nameUpperCase} page');
+    const container = mountWithStore(<${component}Container />, initialState);
+    const component = container.find(${component});
+    expect(component.find('h1').text()).toEqual('${component} page');
   });
 });
+
 `;
 };

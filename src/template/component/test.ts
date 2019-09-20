@@ -1,20 +1,21 @@
 export default (name: string) => {
-  const nameUpperCase = name.charAt(0).toUpperCase() + name.slice(1);
+  const component = name.charAt(0).toUpperCase() + name.slice(1);
   return `import React from 'react';
-import renderer from 'react-test-renderer';
 
-import Enzyme, { shallow } from 'enzyme';
+import { mountWithIntl } from '../../../../../utils/intl-enzyme-test-helper';
+import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import ${nameUpperCase}Component from '../${nameUpperCase}';
+import ${component} from '../${component}';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('<${nameUpperCase} />', () => {
-  it('Renders without crashing.', () => {
-    const rendered = renderer.create(<${nameUpperCase}Component />).toJSON();
-    expect(rendered).toBeTruthy();
+describe(\`${component} rendering\`, () => {
+  it(\`Should render ${component} with h1\`, () => {
+    const component = mountWithIntl(<${component} />);
+    expect(component.find('h1').text()).toEqual('${component} page');
   });
 });
+
 `;
 };

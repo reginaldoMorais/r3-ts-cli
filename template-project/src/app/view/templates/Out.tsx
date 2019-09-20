@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
 import { Switch, Route } from 'react-router-dom';
+
+/* Containers \/ Components */
 import ScrollToTop from '../components/scroll-to-top/ScrollToTop';
 import OutStyle from '../components/OutGlobalStyle';
 import { ContentStyled } from './OutStyle';
 import Toastr from '../components/toastr/Toastr';
+
+/* Routes */
 import Home from '../pages/home/HomeContainer';
 import PageNotFound from '../pages/page-not-found/PageNotFound';
 

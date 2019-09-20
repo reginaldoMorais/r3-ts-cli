@@ -9,7 +9,7 @@ const Spinner = CLI.Spinner;
 class Route {
   private setImport(file: any, importStr: string) {
     const data = fs.readFileSync(file, 'utf-8');
-    const result = data.replace(/\/\* Containers \/ Components \*\//g, importStr);
+    const result = data.replace(/\/\* Routes \*\//g, importStr);
     fs.writeFileSync(file, result, 'utf-8');
   }
 

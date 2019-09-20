@@ -1,30 +1,24 @@
-export default (component: string) => {
+export default (name: string) => {
+  const component = name.charAt(0).toUpperCase() + name.slice(1);
   return `import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
-/* Libs */
-import { Row, Col, Container } from 'reactstrap';
+import { Container } from '@bootstrap-styled/v4';
+import { TitleStyled } from './${component}Style';
+import { IStateProps, IDispatchProps, IOwnProps } from './types';
 
-/* Containers / Components */
+type IProps = IStateProps & IDispatchProps & IOwnProps;
 
-class ${component} extends Component {
+class ${component} extends Component<IProps> {
   render() {
     return (
       <Container>
-        <Row>
-          <Col xs={12}>
-            <h1>${component} page</h1>
-          </Col>
-        </Row>
+        <TitleStyled>${component} page</TitleStyled>
       </Container>
     );
   }
 }
 
-${component}.defaultProps = {};
+export default Home;
 
-${component}.propTypes = {};
-
-export default ${component};
 `;
 };

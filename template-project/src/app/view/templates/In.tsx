@@ -4,6 +4,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import ScrollToTop from '../components/scroll-to-top/ScrollToTop';
 import Toastr from '../components/toastr/Toastr';
 import Content from '../components/content/Content';
+
+/* Routes */
 import PageNotFound from '../pages/page-not-found/PageNotFound';
 
 class In extends Component {

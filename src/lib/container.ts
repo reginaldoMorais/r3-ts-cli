@@ -24,7 +24,7 @@ class Container implements IComponent {
     this.createTest();
 
     const file = `${this.path}/${this.type}/${this.name}/${this.component}Container.tsx`;
-    const content = containerFile(this.component);
+    const content = containerFile(this.name);
 
     touch(file);
     fs.writeFileSync(file, content);
@@ -43,7 +43,7 @@ class Container implements IComponent {
     }
 
     const file = `${this.path}/${this.type}/${this.name}/__test__/${this.component}Container.spec.tsx`;
-    const content = containerTestFile(this.component);
+    const content = containerTestFile(this.name);
 
     touch(file);
     fs.writeFileSync(file, content);

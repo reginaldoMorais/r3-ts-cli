@@ -7,10 +7,10 @@ import { IDuck } from './types';
 
 // Libs
 import Files from './files';
-import typesFile from '../template/duck/types';
-import actionsFile from '../template/duck/actions';
-import sagasFile from '../template/duck/sagas';
-import reducerFile from '../template/duck/reducer';
+import typesTemplate from '../template/duck/types';
+import actionsTemplate from '../template/duck/actions';
+import sagasTemplate from '../template/duck/sagas';
+import reducerTemplate from '../template/duck/reducer';
 
 const Spinner = CLI.Spinner;
 const files = new Files();
@@ -21,7 +21,7 @@ class Duck implements IDuck {
 
   private createTypes() {
     const file = `${this.path}/${this.name}/types.ts`;
-    const content = typesFile(this.name);
+    const content = typesTemplate(this.name);
 
     touch(file);
     fs.writeFileSync(file, content);
@@ -31,7 +31,7 @@ class Duck implements IDuck {
 
   private createActions() {
     const file = `${this.path}/${this.name}/actions.ts`;
-    const content = actionsFile(this.name);
+    const content = actionsTemplate(this.name);
 
     touch(file);
     fs.writeFileSync(file, content);
@@ -41,7 +41,7 @@ class Duck implements IDuck {
 
   private createSagas() {
     const file = `${this.path}/${this.name}/sagas.ts`;
-    const content = sagasFile(this.name);
+    const content = sagasTemplate(this.name);
 
     touch(file);
     fs.writeFileSync(file, content);
@@ -51,7 +51,7 @@ class Duck implements IDuck {
 
   private createReducer() {
     const file = `${this.path}/${this.name}/index.ts`;
-    const content = reducerFile(this.name);
+    const content = reducerTemplate(this.name);
 
     touch(file);
     fs.writeFileSync(file, content);

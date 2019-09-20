@@ -9,6 +9,7 @@ import { ComponentType } from './enum';
 // Libs
 import Files from './files';
 import componentFile from '../template/component/component';
+import typesFile from '../template/component/types';
 import componentTestFile from '../template/component/test';
 
 const Spinner = CLI.Spinner;
@@ -21,10 +22,8 @@ class Component implements IComponent {
   path = './src/app/view';
 
   private createComponent() {
-    this.createTest();
-
     const file = `${this.path}/${this.type}/${this.name}/${this.component}.tsx`;
-    const content = componentFile(this.component);
+    const content = componentFile(this.name);
 
     touch(file);
     fs.writeFileSync(file, content);
@@ -37,13 +36,28 @@ class Component implements IComponent {
     console.error(chalk.red(`\n  \u2715 Component ${this.name.toUpperCase()} removed!`));
   }
 
+  private createTypes() {
+    const file = `${this.path}/${this.type}/${this.name}/types.ts`;
+    const content = typesFile(this.name);
+
+    touch(file);
+    fs.writeFileSync(file, content);
+
+    console.info(chalk.green('  \u2713 Successful Types creation'));
+  }
+
+  private deleteTypes() {
+    fsx.removeSync(`${this.path}/${this.type}/${this.name}/types.ts`);
+    console.error(chalk.red(`\n  \u2715 Types removed!`));
+  }
+
   private createTest() {
     if (!files.directoryExists(`${this.path}/${this.type}/${this.name}/__test__`)) {
       fs.mkdirSync(`${this.path}/${this.type}/${this.name}/__test__`);
     }
 
     const file = `${this.path}/${this.type}/${this.name}/__test__/${this.component}.spec.tsx`;
-    const content = componentTestFile(this.component);
+    const content = componentTestFile(this.name);
 
     touch(file);
     fs.writeFileSync(file, content);
@@ -79,6 +93,7 @@ class Component implements IComponent {
 
       this.deleteComponent();
       this.deleteTest();
+      this.deleteTypes();
     } catch (err) {
       throw err;
     } finally {
@@ -107,6 +122,8 @@ class Component implements IComponent {
       }
 
       this.createComponent();
+      this.createTest();
+      this.createTypes();
     } catch (err) {
       throw err;
     } finally {

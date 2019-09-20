@@ -8,7 +8,7 @@ import { ComponentType } from './enum';
 
 // Libs
 import Files from './files';
-import styleTemplate from '../template/style';
+import styleTemplate from '../template/component/style';
 
 const Spinner = CLI.Spinner;
 const files = new Files();
@@ -54,7 +54,7 @@ class Style implements IStyles {
     this.name = name;
 
     try {
-      if (!files.directoryExists(`${this.path}/${this.type}/${this.name}`)) {
+      if (files.directoryExists(`${this.path}/${this.type}/${this.name}.scss`)) {
         console.error(chalk.red(`\n  The project don't have this style!\n`));
         process.exit();
       }
@@ -80,8 +80,9 @@ class Style implements IStyles {
     this.name = name;
 
     try {
-      if (!files.directoryExists(`${this.path}/${this.type}/${this.name}`)) {
-        fs.mkdirSync(`${this.path}/${this.type}/${this.name}`);
+      if (files.directoryExists(`${this.path}/${this.type}/${this.name}.scss`)) {
+        console.error(chalk.red(`\n  The project already have this style!\n`));
+        process.exit();
       }
 
       this.createStyle();

@@ -8,7 +8,7 @@ import { ComponentType } from './enum';
 
 // Libs
 import Files from './files';
-import styledComponentTemplate from '../template/styledComponentFile';
+import styledComponentTemplate from '../template/component/styledComponentFile';
 
 const Spinner = CLI.Spinner;
 const files = new Files();
@@ -21,7 +21,7 @@ class Style implements IStyles {
 
   public createStyle() {
     const file = `${this.path}/${this.type}/${this.name}/${this.component}Style.ts`;
-    const content = styledComponentTemplate(this.component);
+    const content = styledComponentTemplate();
 
     touch(file);
     fs.writeFileSync(file, content);
