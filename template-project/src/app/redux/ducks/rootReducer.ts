@@ -1,6 +1,7 @@
 import { combineReducers, Action } from 'redux';
 import storage from 'redux-persist/lib/storage';
 
+/* Reducers */
 import { reducer as toastr } from 'react-redux-toastr';
 import character from './characters';
 import starship from './starships';
@@ -10,12 +11,12 @@ const combineAppReducers = combineReducers({
   character,
   starship,
   locate,
-  toastr,
+  toastr
 });
 
 export default (state: any, action: Action) => {
   if (action.type === 'RESET_STORE') {
-    Object.keys(state).forEach((key) => {
+    Object.keys(state).forEach(key => {
       storage.removeItem(`persist:${key}`);
     });
 

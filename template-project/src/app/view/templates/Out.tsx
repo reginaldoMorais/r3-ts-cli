@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
 import { Switch, Route } from 'react-router-dom';
-
-/* Containers \/ Components */
-import ScrollToTop from '../components/scroll-to-top/ScrollToTop';
-import OutStyle from '../components/OutGlobalStyle';
+import ScrollToTop from '../shared/scroll-to-top/ScrollToTop';
+import OutStyle from '../shared/OutGlobalStyle';
 import { ContentStyled } from './OutStyle';
-import Toastr from '../components/toastr/Toastr';
+import Toastr from '../shared/toastr/Toastr';
 
 /* Routes */
 import Home from '../pages/home/HomeContainer';

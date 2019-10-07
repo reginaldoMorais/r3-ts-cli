@@ -9,13 +9,14 @@ type IProps = IStateProps & IDispatchProps;
 
 class IntlSelect extends Component<IProps> {
   handleClick(id: string) {
-    const { locateChange, } = this.props;
+    const { locateChange } = this.props;
     locateChange(id);
   }
 
   renderLink(l: ILocate) {
     const { locate } = this.props;
-    if (locate.data.id === l.id) return <LinkActiveStyled onClick={() => this.handleClick(l.id)}>{l.label}</LinkActiveStyled>;
+    if (locate.data.id === l.id)
+      return <LinkActiveStyled onClick={() => this.handleClick(l.id)}>{l.label}</LinkActiveStyled>;
     else return <a onClick={() => this.handleClick(l.id)}>{l.label}</a>;
   }
 
@@ -23,19 +24,19 @@ class IntlSelect extends Component<IProps> {
     const locates: Array<ILocate> = [
       {
         id: 'en',
-        label: 'en',
+        label: 'en'
       },
       {
         id: 'es',
-        label: 'es',
+        label: 'es'
       },
       {
         id: 'fr',
-        label: 'fr',
+        label: 'fr'
       },
       {
-        id: 'br',
-        label: 'pt-BR',
+        id: 'pt-BR',
+        label: 'pt-BR'
       }
     ];
 
@@ -45,12 +46,12 @@ class IntlSelect extends Component<IProps> {
   render() {
     return (
       <SelectStyled className="app-languages">
-        <h4><IntlMessages id="locate.language" />:</h4>
-        <UlStyled>
-          {this.renderOptions()}
-        </UlStyled>
+        <h4>
+          <IntlMessages id="locate.language" />:
+        </h4>
+        <UlStyled>{this.renderOptions()}</UlStyled>
       </SelectStyled>
-    )
+    );
   }
 }
 

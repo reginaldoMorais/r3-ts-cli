@@ -53,7 +53,7 @@ class Route {
       const component = name.charAt(0).toUpperCase() + name.slice(1);
       let file;
 
-      const importStr = `/* Containers / Components */\nimport ${component} from '../pages/${name}/${container}';`;
+      const importStr = `/* Routes */\nimport ${component} from '../pages/${name}/${container}';`;
       let routeStr;
 
       if (choise.routerOption == 'internal') {

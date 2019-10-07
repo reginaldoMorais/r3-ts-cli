@@ -103,7 +103,8 @@ class Container implements IComponent {
 
     try {
       if (!files.directoryExists(`${this.path}/${this.type}/${this.name}`)) {
-        fs.mkdirSync(`${this.path}/${this.type}/${this.name}`);
+        console.error(chalk.red(`\n  The project don't have this Component to plug container!\n`));
+        process.exit();
       }
 
       this.createContainer();

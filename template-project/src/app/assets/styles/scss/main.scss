@@ -5,11 +5,11 @@
 @import './fonts';
 @import './common';
 
-/* Components */
-@import './components/loading';
-// @import './components/react-burger-menu';
-// @import './components/react-table';
-@import './components/toastr';
+/* Shared */
+@import './shared/loading';
+// @import './shared/react-burger-menu';
+// @import './shared/react-table';
+@import './shared/toastr';
 
 /* Pages */
 @import './pages/home';

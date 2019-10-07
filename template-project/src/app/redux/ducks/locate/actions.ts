@@ -5,16 +5,20 @@ import { Locates } from '../../../lang';
 export const locateChange = (id: string) => {
   return {
     type: LocateTypes.LOCATE_CHANGE,
-    payload: id,
-  }
+    payload: id
+  };
 };
 
 export const locateChanging = (id: string) => {
   switch (id) {
-    case Locates.ES: return { id: 'es', label: 'es' };
-    case Locates.FR: return { id: 'fr', label: 'fr' };
-    case Locates.BR: return { id: 'br', label: 'pt-BR' };
-    default: return { id: 'en', label: 'en' };
+    case Locates.ES:
+      return { id: 'es', label: 'es' };
+    case Locates.FR:
+      return { id: 'fr', label: 'fr' };
+    case Locates.BR:
+      return { id: 'pt-BR', label: 'pt-BR' };
+    default:
+      return { id: 'en', label: 'en' };
   }
 };
 

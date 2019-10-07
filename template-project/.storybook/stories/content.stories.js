@@ -3,7 +3,7 @@ import '../../src/app/assets/styles/scss/main.scss';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Provider from '../Provider.tsx';
-import Content from '../../src/app/view/components/content/Content.tsx';
+import Content from '../../src/app/view/shared/content/Content.tsx';
 import styled from 'styled-components';
 
 const ContentStyled = styled(Content)`

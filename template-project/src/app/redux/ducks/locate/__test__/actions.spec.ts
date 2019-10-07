@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 
 import { ILocate } from '../types';
-import Actions from '../actions'
+import Actions from '../actions';
 
 describe(`Locate Actions`, () => {
   describe(`Actions.locateChange`, () => {
@@ -32,8 +32,8 @@ describe(`Locate Actions`, () => {
       expect(action.label).toEqual('fr');
     });
 
-    it(`Should return pt-BR Lang when changing to locate br`, () => {
-      const nextLang = 'br';
+    it(`Should return pt-BR Lang when changing to locate pt-BR`, () => {
+      const nextLang = 'pt-BR';
       const action = Actions.locateChanging(nextLang);
 
       expect(action.label).toEqual('pt-BR');
@@ -51,7 +51,7 @@ describe(`Locate Actions`, () => {
     it(`Should return action LOCATE_CHANGE_SUCCESS with data when changing to locate es`, () => {
       const nextLang: ILocate = {
         id: 'es',
-        label: 'es',
+        label: 'es'
       };
       const action = Actions.locateChangeSuccess(nextLang);
 

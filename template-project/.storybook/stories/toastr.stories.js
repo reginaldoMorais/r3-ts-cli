@@ -3,7 +3,7 @@ import '../../src/app/assets/styles/scss/main.scss';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Provider from '../Provider.tsx';
-import Toastr from '../../src/app/view/components/toastr/Toastr.tsx';
+import Toastr from '../../src/app/view/shared/toastr/Toastr.tsx';
 
 storiesOf('Toastr', module)
   .add('with info', () => (

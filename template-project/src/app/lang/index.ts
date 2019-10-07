@@ -7,14 +7,14 @@ export enum Locates {
   EN = 'en',
   ES = 'es',
   FR = 'fr',
-  BR = 'br',
+  BR = 'pt-BR'
 }
 
 const Lang = {
   en: enLang,
   es: esLang,
   fr: frLang,
-  br: brLang
+  'pt-BR': brLang
 };
 
 export default Lang;

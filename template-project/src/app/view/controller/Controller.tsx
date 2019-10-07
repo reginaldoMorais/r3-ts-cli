@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import BootstrapProvider from '@bootstrap-styled/provider';
-import GlobalStyle from '../components/GlobalStyle';
+import GlobalStyle from '../shared/GlobalStyle';
 import { IStateProps, IDispatchProps, IOwnProps } from './types';
 import Lang, { Locates } from '../../lang';
 import In from '../templates/In';
@@ -15,12 +15,19 @@ type IProps = IStateProps & IDispatchProps & IOwnProps;
 class Controller extends Component<IProps> {
   getLocate() {
     const { locate } = this.props;
+    var userLang = navigator.language || navigator.userLanguage;
+    alert('The language is: ' + userLang);
     switch (locate.data.id) {
-      case 'en': return Locates.EN;
-      case 'es': return Locates.ES;
-      case 'fr': return Locates.FR;
-      case 'br': return Locates.BR;
-      default: return Locates.EN;
+      case 'en':
+        return Locates.EN;
+      case 'es':
+        return Locates.ES;
+      case 'fr':
+        return Locates.FR;
+      case 'pt-BR':
+        return Locates.BR;
+      default:
+        return Locates.EN;
     }
   }
 

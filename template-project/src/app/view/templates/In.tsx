@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
-import ScrollToTop from '../components/scroll-to-top/ScrollToTop';
-import Toastr from '../components/toastr/Toastr';
-import Content from '../components/content/Content';
+import ScrollToTop from '../shared/scroll-to-top/ScrollToTop';
+import Toastr from '../shared/toastr/Toastr';
+import Content from '../shared/content/Content';
 
 /* Routes */
 import PageNotFound from '../pages/page-not-found/PageNotFound';

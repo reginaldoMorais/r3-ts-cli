@@ -45,6 +45,7 @@ const createRoute = async () => {
   try {
     hasProject();
 
+    console.info('This option will create a new Route with a Component.');
     const answers = await Inquirer.askRouteName();
     const routeName = answers.routeName;
 
@@ -91,6 +92,7 @@ const createSharedComponent = async () => {
   try {
     hasProject();
 
+    console.info('This option will create a shared Component.');
     const answers = await Inquirer.askComponentName();
     const componentName = answers.componentName;
 
@@ -136,6 +138,7 @@ const createContainer = async () => {
   try {
     hasProject();
 
+    console.info('This option will create a Container to plug a Component.');
     const answers = await Inquirer.askContainerName();
     const containerName = answers.containerName;
 
@@ -158,6 +161,7 @@ const createDuck = async () => {
   try {
     hasProject();
 
+    console.info('This option will create a redux estructure for your project.');
     const answers = await Inquirer.askDuckName();
     const duckName = answers.duckName;
 

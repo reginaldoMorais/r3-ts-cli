@@ -5,9 +5,9 @@ import api from '../../utils/api';
 
 import { ${component}Types } from './types';
 import { loadSuccess, loadFailure } from './actions';
-import Action from '../types';
+import { IAction } from '../types';
 
-function* load${component}(action: Action) {
+function* load${component}(action: IAction) {
   try {
     yield put(loadSuccess({}));
   } catch (err) {
@@ -15,11 +15,11 @@ function* load${component}(action: Action) {
   }
 }
 
-function* watch${component}sLoadRequest() {
+function* watch${component}LoadRequest() {
   yield takeLatest(${component}Types.LOAD_REQUEST, load${component});
 }
 
-export { watch${component}sLoadRequest };
+export { watch${component}LoadRequest };
 
 `;
 };

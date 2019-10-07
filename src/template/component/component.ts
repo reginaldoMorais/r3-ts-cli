@@ -18,7 +18,7 @@ class ${component} extends Component<IProps> {
   }
 }
 
-export default Home;
+export default ${component};
 
 `;
 };

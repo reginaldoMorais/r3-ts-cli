@@ -9,12 +9,12 @@ import { IStateProps, IDispatchProps, IOwnProps } from './types';
 import ${component}Actions from '../../../redux/ducks/${name}/actions';
 import ${component} from './${component}';
 
-const mapStateToProps: MapStateToProps<IStateProps, IOwnProps, IApplicationState> = ({  Character}: IApplicationState) => ({});
+const mapStateToProps: MapStateToProps<IStateProps, IOwnProps, IApplicationState> = ({ ${name} }: IApplicationState) => ({ ${name} });
 
 const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IOwnProps> = (dispatch: Dispatch) =>
   bindActionCreators(
     {
-      loadCharacter: ${component}Actions.loadRequest,
+      loadRequest: ${component}Actions.loadRequest,
     },
     dispatch
   );

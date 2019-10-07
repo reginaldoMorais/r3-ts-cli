@@ -39,7 +39,7 @@ export default class Project {
       }
     });
 
-    console.info(chalk.green('  \u2713 Project name inserted'));
+    console.info(chalk.green('  \u2713 Project configured'));
   }
 
   public copyFiles(projectName: string) {
