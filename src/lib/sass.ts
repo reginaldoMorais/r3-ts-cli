@@ -16,11 +16,18 @@ const files = new Files();
 class Style implements IStyles {
   name = '';
   type = '';
+  componentType: ComponentType = 1;
   path = './src/app/assets/styles/scss';
 
-  private setImport() {
+  private setSharedImport() {
     const data = fs.readFileSync(`${this.path}/main.scss`, 'utf-8');
-    const result = data.replace(/\/\* Shared \*\//g, `/* Shared */\n@import './pages/${this.name}';`);
+    const result = data.replace(/\/\* Shared \*\//g, `/* Shared */\n@import './shared/${this.name}';`);
+    fs.writeFileSync(`${this.path}/main.scss`, result, 'utf-8');
+  }
+
+  private setPagesImport() {
+    const data = fs.readFileSync(`${this.path}/main.scss`, 'utf-8');
+    const result = data.replace(/\/\* Pages \*\//g, `/* Pages */\n@import './pages/${this.name}';`);
     fs.writeFileSync(`${this.path}/main.scss`, result, 'utf-8');
   }
 
@@ -31,7 +38,11 @@ class Style implements IStyles {
     touch(file);
     fs.writeFileSync(file, content);
 
-    this.setImport();
+    if (this.componentType === ComponentType.PAGE) {
+      this.setPagesImport();
+    } else {
+      this.setSharedImport();
+    }
 
     console.info(chalk.green('  \u2713 Successful Style creation'));
   }
@@ -45,13 +56,13 @@ class Style implements IStyles {
     const status = new Spinner('Deleting Sass structure, please wait...');
     status.start();
 
-    if (type == ComponentType.PAGE) {
+    this.name = name;
+    this.componentType = type;
+    if (this.componentType === ComponentType.PAGE) {
       this.type = 'pages';
     } else {
       this.type = 'shared';
     }
-
-    this.name = name;
 
     try {
       if (files.directoryExists(`${this.path}/${this.type}/${this.name}.scss`)) {
@@ -71,13 +82,13 @@ class Style implements IStyles {
     const status = new Spinner('Creating Sass structure, please wait...');
     status.start();
 
-    if (type == ComponentType.PAGE) {
+    this.name = name;
+    this.componentType = type;
+    if (this.componentType === ComponentType.PAGE) {
       this.type = 'pages';
     } else {
       this.type = 'shared';
     }
-
-    this.name = name;
 
     try {
       if (files.directoryExists(`${this.path}/${this.type}/${this.name}.scss`)) {
