@@ -76,14 +76,13 @@ class Component implements IComponent {
 
     const component = name.charAt(0).toUpperCase() + name.slice(1);
 
+    this.name = name;
+    this.component = component;
     if (type == ComponentType.PAGE) {
       this.type = 'pages';
     } else {
       this.type = 'shared';
     }
-
-    this.name = name;
-    this.component = component;
 
     try {
       if (!files.directoryExists(`${this.path}/${this.type}/${this.name}`)) {
@@ -107,14 +106,13 @@ class Component implements IComponent {
 
     const component = name.charAt(0).toUpperCase() + name.slice(1);
 
+    this.name = name;
+    this.component = component;
     if (type == ComponentType.PAGE) {
       this.type = 'pages';
     } else {
       this.type = 'shared';
     }
-
-    this.name = name;
-    this.component = component;
 
     try {
       if (!files.directoryExists(`${this.path}/${this.type}/${this.name}`)) {

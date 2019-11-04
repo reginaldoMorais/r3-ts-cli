@@ -21,10 +21,10 @@ class Container implements IComponent {
   path = './src/app/view';
 
   private createContainer() {
-    this.createTest();
-
     const file = `${this.path}/${this.type}/${this.name}/${this.component}Container.tsx`;
     const content = containerFile(this.name);
+
+    console.info('aaaaaaaa ', file);
 
     touch(file);
     fs.writeFileSync(file, content);
@@ -62,14 +62,13 @@ class Container implements IComponent {
 
     const component = name.charAt(0).toUpperCase() + name.slice(1);
 
+    this.name = name;
+    this.component = component;
     if (type == ComponentType.PAGE) {
       this.type = 'pages';
     } else {
       this.type = 'shared';
     }
-
-    this.name = name;
-    this.component = component;
 
     try {
       if (!files.directoryExists(`${this.path}/${this.type}/${this.name}`)) {
@@ -92,14 +91,13 @@ class Container implements IComponent {
 
     const component = name.charAt(0).toUpperCase() + name.slice(1);
 
+    this.name = name;
+    this.component = component;
     if (type == ComponentType.PAGE) {
       this.type = 'pages';
     } else {
       this.type = 'shared';
     }
-
-    this.name = name;
-    this.component = component;
 
     try {
       if (!files.directoryExists(`${this.path}/${this.type}/${this.name}`)) {
@@ -108,6 +106,7 @@ class Container implements IComponent {
       }
 
       this.createContainer();
+      this.createTest();
     } catch (err) {
       throw err;
     } finally {

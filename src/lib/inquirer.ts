@@ -14,10 +14,10 @@ class Inquirer {
           'Create a Container',
           'Create a Duck',
           'Show available commands',
-          'Exit'
+          'Exit',
         ],
-        default: 'Create new project'
-      }
+        default: 'Create new project',
+      },
     ];
     return inquirer.prompt(questions);
   }
@@ -34,8 +34,8 @@ class Inquirer {
           } else {
             return 'Please enter a name for the Project.';
           }
-        }
-      }
+        },
+      },
     ];
     return inquirer.prompt(questions);
   }
@@ -52,8 +52,8 @@ class Inquirer {
           } else {
             return 'Please enter a valid Component name.';
           }
-        }
-      }
+        },
+      },
     ];
     return inquirer.prompt(questions);
   }
@@ -70,20 +70,8 @@ class Inquirer {
           } else {
             return 'Please enter a valid Container name.';
           }
-        }
-      }
-    ];
-    return inquirer.prompt(questions);
-  }
-
-  public static async askContainerCreate() {
-    const questions = [
-      {
-        name: 'containerCreate',
-        type: 'confirm',
-        message: 'Do you want create a Container for it?',
-        default: true
-      }
+        },
+      },
     ];
     return inquirer.prompt(questions);
   }
@@ -100,8 +88,8 @@ class Inquirer {
           } else {
             return 'Please enter a valid Route.';
           }
-        }
-      }
+        },
+      },
     ];
     return inquirer.prompt(questions);
   }
@@ -113,8 +101,8 @@ class Inquirer {
         type: 'list',
         message: 'Tell me which route type do you want:',
         choices: ['external', 'internal'],
-        default: 'external'
-      }
+        default: 'external',
+      },
     ];
     return inquirer.prompt(questions);
   }
@@ -131,8 +119,8 @@ class Inquirer {
           } else {
             return 'Please enter a valid Duck.';
           }
-        }
-      }
+        },
+      },
     ];
     return inquirer.prompt(questions);
   }
@@ -143,8 +131,8 @@ class Inquirer {
         name: 'duckCreate',
         type: 'confirm',
         message: 'Do you want create a Duck for it?',
-        default: true
-      }
+        default: true,
+      },
     ];
     return inquirer.prompt(questions);
   }

@@ -51,7 +51,7 @@ class Duck implements IDuck {
     const data = fs.readFileSync(rootSaga, 'utf-8');
     let result = data.replace(
       /\/\* Sagas \*\//g,
-      `/* Sagas */\nimport { watch${component}LoadRequest } from './${this.name}/sagas';`
+      `/* Sagas */\nimport { watch${component}LoadRequest } from './${this.name}/sagas';`,
     );
     result = result.replace(/return yield all\(\[/g, `return yield all([\n    watch${component}LoadRequest(),`);
 
@@ -72,7 +72,7 @@ class Duck implements IDuck {
     let result = data.replace(/\/\* Reducers \*\//g, `/* Reducers */\nimport ${this.name} from './${this.name}';`);
     result = result.replace(
       /const combineAppReducers = combineReducers\(\{/g,
-      `const combineAppReducers = combineReducers({\n  ${this.name},`
+      `const combineAppReducers = combineReducers({\n  ${this.name},`,
     );
 
     fs.writeFileSync(rootReducer, result, 'utf-8');
@@ -87,11 +87,11 @@ class Duck implements IDuck {
     const data = fs.readFileSync(types, 'utf-8');
     let result = data.replace(
       /\/\* Types \*\//g,
-      `/* Types */\nimport { I${component}State } from '../ducks/${this.name}/types';`
+      `/* Types */\nimport { I${component}State } from '../ducks/${this.name}/types';`,
     );
     result = result.replace(
       /export interface IApplicationState \{/g,
-      `export interface IApplicationState \{\n  ${this.name}: I${component}State;`
+      `export interface IApplicationState \{\n  ${this.name}: I${component}State;`,
     );
     '';
 

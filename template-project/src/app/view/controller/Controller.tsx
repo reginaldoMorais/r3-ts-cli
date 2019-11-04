@@ -16,7 +16,6 @@ class Controller extends Component<IProps> {
   getLocate() {
     const { locate } = this.props;
     var userLang = navigator.language || navigator.userLanguage;
-    alert('The language is: ' + userLang);
     switch (locate.data.id) {
       case 'en':
         return Locates.EN;

@@ -49,7 +49,7 @@ const createRoute = async () => {
     const answers = await Inquirer.askRouteName();
     const routeName = answers.routeName;
 
-    if (files.directoryExists(`./source/views/web/page/${routeName}`)) {
+    if (files.directoryExists(`./src/app/view/pages/${routeName}`)) {
       console.error(chalk.red('\n  This Route is already exists!\n'));
       process.exit();
     }
@@ -96,20 +96,13 @@ const createSharedComponent = async () => {
     const answers = await Inquirer.askComponentName();
     const componentName = answers.componentName;
 
-    if (files.directoryExists(`./source/views/web/shared/${componentName}`)) {
+    if (files.directoryExists(`./src/app/view/shared/${componentName}`)) {
       console.error(chalk.red('\n  This Component is already exists!\n'));
       process.exit();
     }
 
     console.info(chalk.blue('\u25A0 Creating new Component, please wait...'));
     await component.create(ComponentType.SHARED, componentName.toString());
-
-    const containerChoise = await Inquirer.askContainerCreate();
-
-    if (containerChoise.option) {
-      console.info(chalk.blue('\u25A0 Creating a new Container, please wait...'));
-      await container.create(ComponentType.SHARED, componentName.toString());
-    }
 
     console.info(chalk.blue('\u25A0 Creating a new Style, please wait...'));
     await style.create(StylesType.SASS, ComponentType.SHARED, componentName.toString());

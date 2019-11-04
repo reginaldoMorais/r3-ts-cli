@@ -18,7 +18,7 @@ export default class Project {
       `${process.cwd()}/${projectName}/package.json`,
       `${process.cwd()}/${projectName}/commands-ls.js`,
       `${process.cwd()}/${projectName}/README.md`,
-      `${process.cwd()}/${projectName}/.r3-cli`
+      `${process.cwd()}/${projectName}/.r3-cli`,
     ];
 
     files.forEach(file => {
