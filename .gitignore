@@ -1,7 +1,6 @@
 # dependencies
 node_modules/
 target/
-dist/
 
 # logs
 npm-debug.log*

@@ -1,6 +1,6 @@
 {
   "name": "r3-ts-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/index.js",
   "bin": {
     "r3-ts-cli": "./dist/index.js"
@@ -11,7 +11,7 @@
   "scripts": {
     "clean": "rm -Rf dist",
     "start": "ts-node src/index.ts",
-    "create": "npm run build && npm run test",
+    "create": "npm run build",
     "build": "npm run clean && tsc -p .",
     "test": "jest",
     "test:w": "jest --watchAll",
@@ -38,7 +38,6 @@
     "fs-extra": "^8.1.0",
     "inquirer": "^7.0.0",
     "path": "^0.12.7",
-    "tslint": "^5.20.0",
     "unzip": "^0.1.11",
     "unzipper": "^0.10.5"
   },
