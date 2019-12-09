@@ -7,7 +7,7 @@
 # R3-TS-CLI
 
 Create React applications with server-side rendering using Redux and Router v4. Simple and very fast!
-This CLI is a Typescript version of module [R3-CLI](https://github.com/reginaldoMorais/r3-cli-ts.git).
+This CLI is a Typescript version of module [R3-CLI](https://github.com/reginaldoMorais/r3-cli.git).
 
 ## Installation
 
@@ -19,7 +19,7 @@ npm install -g r3-cli-ts
 
 ### Javascript version
 
-For using Javascript version please access: [R3-CLI-TS](https://github.com/reginaldoMorais/r3-cli-ts.git)
+For using Javascript version please access: [R3-CLI](https://github.com/reginaldoMorais/r3-cli.git)
 
 ## Usage
 
