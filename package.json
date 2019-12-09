@@ -1,9 +1,9 @@
 {
   "name": "r3-ts-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./lib/index.js",
   "bin": {
-    "r3-ts-cli": "./lib/index.js"
+    "r3-ts-cli": "./dist/index.js"
   },
   "repository": "https://github.com/reginaldoMorais/r3-ts-cli.git",
   "author": "reginaldoMorais <reginaldo.cmorais@gmail.com>",
