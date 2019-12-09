@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/reginaldoMorais/r3-cli-vscode-snippet">
-    <img alt="r3-cli" src="https://i.ibb.co/Z8LwRJT/r3-cli-ts-logo.png" width="244">
+    <img alt="r3-cli" src="https://i.ibb.co/Z8LwRJT/r3-ts-cli-logo.png" width="244">
   </a>
 </p>
 
@@ -14,7 +14,7 @@ This CLI is a Typescript version of module [R3-CLI](https://github.com/reginaldo
 Run the command below, to have the module installed globally:
 
 ```bash
-npm install -g r3-cli-ts
+npm install -g r3-ts-cli
 ```
 
 ### Javascript version
@@ -26,19 +26,19 @@ For using Javascript version please access: [R3-CLI](https://github.com/reginald
 To see commands avaliable, run a single command with argument:
 
 ```bash
-r3-cli-ts --help
+r3-ts-cli --help
 ```
 
 To create a new Project, run the command:
 
 ```bash
-r3-cli-ts
+r3-ts-cli
 ```
 
 or
 
 ```bash
-r3-cli-ts -c my-app
+r3-ts-cli -c my-app
 ```
 
 It will create a directory called `my-app` inside the current folder.
@@ -153,7 +153,7 @@ Your Project is ready to be accessed. Your can run the command **npm ls** or **y
 To create a new route on your Project run the command bellow:
 
 ```bash
-r3-cli-ts --route
+r3-ts-cli --route
 ```
 
 A new route and view will automatically be created. It will be created the files:
