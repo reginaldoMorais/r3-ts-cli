@@ -14,6 +14,5 @@ export const clearData = () => action(${component}Types.CLEAR_DATA);
 export default {
   loadRequest, loadSuccess, loadFailure, clearData,
 };
-
 `;
 };

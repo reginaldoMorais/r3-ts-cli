@@ -2,6 +2,8 @@ import chalk from 'chalk';
 import fs from 'fs';
 import fsx from 'fs-extra';
 
+const pkg = require('../../package.json');
+
 export default class Project {
   public deleteProject(projectName: string) {
     fsx.removeSync(projectName);
@@ -28,6 +30,8 @@ export default class Project {
 
         if (file.indexOf('package.json') > 0) {
           result = data.replace(/{{APP_TITLE}}/g, projectName.toLowerCase());
+        } else if (file.indexOf('.r3-cli') > 0) {
+          result = data.replace(/{{APP_TITLE}}/g, projectName.toUpperCase()).replace(/{{APP_VERSION}}/g, pkg.version);
         } else {
           result = data.replace(/{{APP_TITLE}}/g, projectName.toUpperCase());
         }
@@ -44,9 +48,7 @@ export default class Project {
 
   public copyFiles(projectName: string) {
     try {
-      console.log(`${projectName}/archive.zip`);
-
-      fsx.copySync(`template-project`, `${projectName}`);
+      fsx.copySync(`${__dirname}/../../template-project`, `${projectName}`);
       console.info(chalk.green('  \u2713 Project created'));
     } catch (err) {
       console.error(err);

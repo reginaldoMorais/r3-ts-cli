@@ -10,6 +10,6 @@ declare class Container implements IComponent {
     private createTest;
     private deleteTest;
     delete(type: ComponentType, name: string): void;
-    create(type: ComponentType, name: string): void;
+    create(type: ComponentType, name: string, hasDuck?: boolean): void;
 }
 export default Container;

@@ -6,6 +6,5 @@ const TitleStyled = styled.h1\`
 \`;
 
 export { TitleStyled };
-
 `;
 };

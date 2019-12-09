@@ -9,6 +9,7 @@ import { ComponentType } from './enum';
 // Libs
 import Files from './files';
 import containerFile from '../template/container/container';
+import containerDuckFile from '../template/container/container';
 import containerTestFile from '../template/container/test';
 
 const Spinner = CLI.Spinner;
@@ -20,9 +21,9 @@ class Container implements IComponent {
   component = '';
   path = './src/app/view';
 
-  private createContainer() {
+  private createContainer(containerFileFunc: any) {
     const file = `${this.path}/${this.type}/${this.name}/${this.component}Container.tsx`;
-    const content = containerFile(this.name);
+    const content = containerFileFunc(this.name);
 
     console.info('aaaaaaaa ', file);
 
@@ -85,7 +86,7 @@ class Container implements IComponent {
     }
   }
 
-  public create(type: ComponentType, name: string) {
+  public create(type: ComponentType, name: string, hasDuck: boolean = false) {
     const status = new Spinner('Creating View structure, please wait...');
     status.start();
 
@@ -105,7 +106,12 @@ class Container implements IComponent {
         process.exit();
       }
 
-      this.createContainer();
+      let containerFileFunc = containerFile;
+      if (hasDuck) {
+        containerFileFunc = containerDuckFile;
+      }
+
+      this.createContainer(containerFileFunc);
       this.createTest();
     } catch (err) {
       throw err;

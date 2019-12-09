@@ -46,6 +46,7 @@ var figlet_1 = __importDefault(require("figlet"));
 var commander_1 = __importDefault(require("commander"));
 var inquirer_1 = __importDefault(require("./lib/inquirer"));
 var commands_1 = require("./commands");
+var pkg = require('../package.json');
 /**
  * Show cli header.
  */
@@ -63,7 +64,7 @@ var showCommands = function () { return __awaiter(void 0, void 0, void 0, functi
             case 0:
                 commander_1.default
                     .usage('aaaa')
-                    .version('1.0.0', '-v, --version', 'output the current version')
+                    .version(pkg.version, '-v, --version', 'output the current version')
                     .description("An example CLI for ordering pizza's")
                     .option('-c, --create', 'create new React App')
                     .option('-r, --route', 'add new route on App')

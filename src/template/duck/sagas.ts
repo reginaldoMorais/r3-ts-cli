@@ -20,6 +20,5 @@ function* watch${component}LoadRequest() {
 }
 
 export { watch${component}LoadRequest };
-
 `;
 };

@@ -19,6 +19,5 @@ class ${component} extends Component<IProps> {
 }
 
 export default ${component};
-
 `;
 };

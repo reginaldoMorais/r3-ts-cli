@@ -57,19 +57,19 @@ const createRoute = async () => {
     console.info(chalk.blue('\u25A0 Creating new Component, please wait...'));
     await component.create(ComponentType.PAGE, routeName.toString());
 
-    console.info(chalk.blue('\u25A0 Creating new Container, please wait...'));
-    await container.create(ComponentType.PAGE, routeName.toString());
-
-    console.info(chalk.blue('\u25A0 Creating a new Style, please wait...'));
-    await style.create(StylesType.SASS, ComponentType.PAGE, routeName.toString());
-    await style.create(StylesType.STYLED, ComponentType.PAGE, routeName.toString());
-
     const duckChoise = await Inquirer.askDuckCreate();
 
     if (duckChoise.duckCreate) {
       console.info(chalk.blue('\u25A0 Creating a new Duck, please wait...'));
       await duck.create(routeName.toString());
     }
+
+    console.info(chalk.blue('\u25A0 Creating new Container, please wait...'));
+    await container.create(ComponentType.PAGE, routeName.toString());
+
+    console.info(chalk.blue('\u25A0 Creating a new Style, please wait...'));
+    await style.create(StylesType.SASS, ComponentType.PAGE, routeName.toString());
+    await style.create(StylesType.STYLED, ComponentType.PAGE, routeName.toString());
 
     const routerChoise = await Inquirer.askRouteType();
 

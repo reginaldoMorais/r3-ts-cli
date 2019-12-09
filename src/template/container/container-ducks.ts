@@ -6,13 +6,22 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { IApplicationState } from '../../../redux/store/types';
 import { IStateProps, IDispatchProps, IOwnProps } from './types';
 
+import ${component}Actions from '../../../redux/ducks/${name}/actions';
 import ${component} from './${component}';
 
-const mapStateToProps: MapStateToProps<IStateProps, IOwnProps, IApplicationState> = ({}: IApplicationState) => ({});
+const mapStateToProps: MapStateToProps<IStateProps, IOwnProps, IApplicationState> = ({ ${name} }: IApplicationState) => ({ ${name} });
 
 const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IOwnProps> = (dispatch: Dispatch) =>
-  bindActionCreators({}, dispatch);
+  bindActionCreators(
+    {
+      loadRequest: ${component}Actions.loadRequest,
+    },
+    dispatch
+  );
 
-export default connect(mapStateToProps, mapDispatchToProps)(${component});
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(${component});
 `;
 };

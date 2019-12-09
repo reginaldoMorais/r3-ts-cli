@@ -14,6 +14,5 @@ export interface I${component}State {
   readonly loading: boolean;
   readonly error: boolean;
 }
-
 `;
 };

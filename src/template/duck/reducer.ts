@@ -40,6 +40,5 @@ export default (state: I${component}State = INITIAL_STATE, action: IAction) => {
       return state;
   }
 };
-
 `;
 };

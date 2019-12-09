@@ -51,6 +51,5 @@ describe(\`${component}Container rendering\`, () => {
     expect(component.find('h1').text()).toEqual('${component} page');
   });
 });
-
 `;
 };

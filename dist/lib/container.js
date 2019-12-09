@@ -12,6 +12,7 @@ var enum_1 = require("./enum");
 // Libs
 var files_1 = __importDefault(require("./files"));
 var container_1 = __importDefault(require("../template/container/container"));
+var container_2 = __importDefault(require("../template/container/container"));
 var test_1 = __importDefault(require("../template/container/test"));
 var Spinner = clui_1.default.Spinner;
 var files = new files_1.default();
@@ -22,9 +23,9 @@ var Container = /** @class */ (function () {
         this.component = '';
         this.path = './src/app/view';
     }
-    Container.prototype.createContainer = function () {
+    Container.prototype.createContainer = function (containerFileFunc) {
         var file = this.path + "/" + this.type + "/" + this.name + "/" + this.component + "Container.tsx";
-        var content = container_1.default(this.name);
+        var content = containerFileFunc(this.name);
         console.info('aaaaaaaa ', file);
         touch_1.default(file);
         fs_1.default.writeFileSync(file, content);
@@ -75,7 +76,8 @@ var Container = /** @class */ (function () {
             status.stop();
         }
     };
-    Container.prototype.create = function (type, name) {
+    Container.prototype.create = function (type, name, hasDuck) {
+        if (hasDuck === void 0) { hasDuck = false; }
         var status = new Spinner('Creating View structure, please wait...');
         status.start();
         var component = name.charAt(0).toUpperCase() + name.slice(1);
@@ -92,7 +94,11 @@ var Container = /** @class */ (function () {
                 console.error(chalk_1.default.red("\n  The project don't have this Component to plug container!\n"));
                 process.exit();
             }
-            this.createContainer();
+            var containerFileFunc = container_1.default;
+            if (hasDuck) {
+                containerFileFunc = container_2.default;
+            }
+            this.createContainer(containerFileFunc);
             this.createTest();
         }
         catch (err) {

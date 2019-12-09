@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var chalk_1 = __importDefault(require("chalk"));
 var fs_1 = __importDefault(require("fs"));
 var fs_extra_1 = __importDefault(require("fs-extra"));
+var pkg = require('../../package.json');
 var Project = /** @class */ (function () {
     function Project() {
     }
@@ -33,6 +34,9 @@ var Project = /** @class */ (function () {
                 if (file.indexOf('package.json') > 0) {
                     result = data.replace(/{{APP_TITLE}}/g, projectName.toLowerCase());
                 }
+                else if (file.indexOf('.r3-cli') > 0) {
+                    result = data.replace(/{{APP_TITLE}}/g, projectName.toUpperCase()).replace(/{{APP_VERSION}}/g, pkg.version);
+                }
                 else {
                     result = data.replace(/{{APP_TITLE}}/g, projectName.toUpperCase());
                 }
@@ -47,8 +51,7 @@ var Project = /** @class */ (function () {
     };
     Project.prototype.copyFiles = function (projectName) {
         try {
-            console.log(projectName + "/archive.zip");
-            fs_extra_1.default.copySync("template-project", "" + projectName);
+            fs_extra_1.default.copySync(__dirname + "/../../template-project", "" + projectName);
             console.info(chalk_1.default.green('  \u2713 Project created'));
         }
         catch (err) {

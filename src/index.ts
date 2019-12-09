@@ -7,6 +7,8 @@ import program from 'commander';
 import Inquirer from './lib/inquirer';
 import { createProject, createRoute, createSharedComponent, createContainer, createDuck } from './commands';
 
+const pkg = require('../package.json');
+
 /**
  * Show cli header.
  */
@@ -22,7 +24,7 @@ const showAppHeader = () => {
 const showCommands = async () => {
   program
     .usage('aaaa')
-    .version('1.0.0', '-v, --version', 'output the current version')
+    .version(pkg.version, '-v, --version', 'output the current version')
     .description("An example CLI for ordering pizza's")
     .option('-c, --create', 'create new React App')
     .option('-r, --route', 'add new route on App')

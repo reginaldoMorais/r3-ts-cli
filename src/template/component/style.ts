@@ -3,6 +3,5 @@ export default (name: string) => {
   return `/**
  * ${component}
  */
-
 `;
 };

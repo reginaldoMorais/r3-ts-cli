@@ -97,27 +97,28 @@ var createRoute = function () { return __awaiter(void 0, void 0, void 0, functio
                 return [4 /*yield*/, component.create(enum_1.ComponentType.PAGE, routeName.toString())];
             case 2:
                 _a.sent();
+                return [4 /*yield*/, inquirer_1.default.askDuckCreate()];
+            case 3:
+                duckChoise = _a.sent();
+                if (!duckChoise.duckCreate) return [3 /*break*/, 5];
+                console.info(chalk_1.default.blue('\u25A0 Creating a new Duck, please wait...'));
+                return [4 /*yield*/, duck.create(routeName.toString())];
+            case 4:
+                _a.sent();
+                _a.label = 5;
+            case 5:
                 console.info(chalk_1.default.blue('\u25A0 Creating new Container, please wait...'));
                 return [4 /*yield*/, container.create(enum_1.ComponentType.PAGE, routeName.toString())];
-            case 3:
+            case 6:
                 _a.sent();
                 console.info(chalk_1.default.blue('\u25A0 Creating a new Style, please wait...'));
                 return [4 /*yield*/, style.create(enum_1.StylesType.SASS, enum_1.ComponentType.PAGE, routeName.toString())];
-            case 4:
-                _a.sent();
-                return [4 /*yield*/, style.create(enum_1.StylesType.STYLED, enum_1.ComponentType.PAGE, routeName.toString())];
-            case 5:
-                _a.sent();
-                return [4 /*yield*/, inquirer_1.default.askDuckCreate()];
-            case 6:
-                duckChoise = _a.sent();
-                if (!duckChoise.duckCreate) return [3 /*break*/, 8];
-                console.info(chalk_1.default.blue('\u25A0 Creating a new Duck, please wait...'));
-                return [4 /*yield*/, duck.create(routeName.toString())];
             case 7:
                 _a.sent();
-                _a.label = 8;
-            case 8: return [4 /*yield*/, inquirer_1.default.askRouteType()];
+                return [4 /*yield*/, style.create(enum_1.StylesType.STYLED, enum_1.ComponentType.PAGE, routeName.toString())];
+            case 8:
+                _a.sent();
+                return [4 /*yield*/, inquirer_1.default.askRouteType()];
             case 9:
                 routerChoise = _a.sent();
                 console.info(chalk_1.default.blue('\u25A0 Creating a new Route, please wait...'));
