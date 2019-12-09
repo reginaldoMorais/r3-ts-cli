@@ -2,19 +2,4 @@ Project:
   Typescript React.
 
 Todo:
-  ✔ Implement Eslint; @high @done(19-07-22 23:08)
-  ✔ Implement hot reload; @high @done(19-07-22 23:54)
-  ✔ Refactor project structure. @critical @done(19-08-01 18:12)
-  ✔ Implement Server Side Rendering. @critical @done(19-08-12 00:42)
-  ✔ Implement Styled Components. @high @done(19-08-13 18:49)
-  ✔ Implement React Router on Client. @critical @done(19-08-13 19:31)
-  ✔ Implement React Router on Server. @critical @done(19-08-14 09:57)
-  ✔ Implement Jest and Enzyme for tests. @critical @done(19-08-14 10:24)
-  ✔ Implement Dockerfile. @high @done(19-08-14 13:02)
-  ✔ Update project dependencies. @low @done(19-08-14 13:04)
-  ✔ Update project config files. @low @done(19-08-14 15:42)
-  ✔ Update vendor and client bundle. @low @done(19-08-14 15:55)
-  ✔ Refactor Home. @low @done(19-08-14 21:04)
-  ✔ Implement Storybook. @low @done(19-08-15 18:44)
-  ✔ Implement React Intl. @low @done(19-09-04 11:15)
-  ☐ Implement relative path. @low
+
