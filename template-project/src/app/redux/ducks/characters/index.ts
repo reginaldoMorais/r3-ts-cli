@@ -1,6 +1,6 @@
 import { ICharacter, ICharacterState, CharacterTypes } from './types';
 
-import { IAction } from '../types';
+import IAction from '../types';
 
 const CHARACTER_INITIAL_STATE: ICharacter = {
   id: 0,

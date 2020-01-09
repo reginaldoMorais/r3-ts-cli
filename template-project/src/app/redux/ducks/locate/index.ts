@@ -1,6 +1,6 @@
 import { ILocateState, LocateTypes, ILocate } from './types';
 
-import { IAction } from '../types';
+import IAction from '../types';
 
 const LOCATE_INITIAL_STATE: ILocate = {
   id: 'en',

@@ -2,7 +2,7 @@ export default (name: string) => {
   const component = name.charAt(0).toUpperCase() + name.slice(1);
   return `import { I${component}, I${component}State, ${component}Types } from './types';
 
-import { IAction } from '../types';
+import IAction from '../types';
 
 const DATA_INITIAL_STATE: I${component} = {};
 

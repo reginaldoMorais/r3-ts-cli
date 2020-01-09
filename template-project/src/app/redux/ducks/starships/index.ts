@@ -1,6 +1,6 @@
 import { IStarshipState, StarshipTypes } from './types';
 
-import { IAction } from '../types';
+import IAction from '../types';
 
 const INITIAL_STATE: IStarshipState = {
   data: {

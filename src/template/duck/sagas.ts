@@ -5,7 +5,7 @@ import api from '../../utils/api';
 
 import { ${component}Types } from './types';
 import { loadSuccess, loadFailure } from './actions';
-import { IAction } from '../types';
+import IAction from '../types';
 
 function* load${component}(action: IAction) {
   try {

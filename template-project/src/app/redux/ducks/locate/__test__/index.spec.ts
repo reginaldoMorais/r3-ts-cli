@@ -3,7 +3,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-import { IAction } from '../../types';
+import IAction from '../../types';
 import { LocateTypes, ILocateState, ILocate } from '../types';
 import reducer from '../index'
 

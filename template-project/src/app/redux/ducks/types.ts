@@ -1,9 +1,9 @@
 import { Action as ReduxAction } from 'redux';
 
-export interface IPayload {
+interface IPayload {
   data: any;
-};
+}
 
-export interface IAction extends ReduxAction {
+export default interface IAction extends ReduxAction {
   payload: IPayload;
-};
+}
