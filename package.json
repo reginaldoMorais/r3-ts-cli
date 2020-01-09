@@ -1,6 +1,6 @@
 {
   "name": "r3-ts-cli",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "./lib/index.js",
   "bin": {
     "r3-ts-cli": "./dist/index.js"
