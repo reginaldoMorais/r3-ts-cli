@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.13 (January 09, 2020)
+
+### Fix typescript types import
+
+- Alpha release. ([@reginaldoMorais](https://github.com/reginaldoMorais))
+
 ## 0.0.12 (January 09, 2020)
 
 ### Fix typescript bug
