@@ -15,7 +15,6 @@ type IProps = IStateProps & IDispatchProps & IOwnProps;
 class Controller extends Component<IProps> {
   getLocate() {
     const { locate } = this.props;
-    var userLang = navigator.language || navigator.userLanguage;
     switch (locate.data.id) {
       case 'en':
         return Locates.EN;
