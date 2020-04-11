@@ -5,7 +5,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 import IAction from '../../types';
 import { CharacterTypes, ICharacterState, ICharacter } from '../types';
-import reducer from '../index'
+import reducer from '../index';
 
 describe(`Characters Reducer`, () => {
   let CHARACTER_INITIAL_STATE: ICharacter;
@@ -32,8 +32,8 @@ describe(`Characters Reducer`, () => {
       type: CharacterTypes.LOAD_REQUEST,
       payload: {
         data: null,
-      }
-    }
+      },
+    };
 
     const newState = reducer(INITIAL_STATE, action);
 
@@ -54,7 +54,7 @@ describe(`Characters Reducer`, () => {
       payload: {
         data: character,
       },
-    }
+    };
 
     const newState = reducer(INITIAL_STATE, action);
 
@@ -66,8 +66,8 @@ describe(`Characters Reducer`, () => {
       type: CharacterTypes.LOAD_FAILURE,
       payload: {
         data: null,
-      }
-    }
+      },
+    };
 
     const newState = reducer(INITIAL_STATE, action);
 
